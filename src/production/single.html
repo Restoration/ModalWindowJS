@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="js/modal-window.js"></script>
+	<script>
+		$(function(){
+			//Default options
+			$(document).modalWindow({
+				"openTrigger": ".trigger",//Classes related to the open trigger
+				"closeTrigger": ".closeBtn",//Classes related to the close button
+				"modalContent": ".modalContent",//Classes related to the contents of the modal window
+				"overLay" : "overLay",//overlayer class
+				"width" : 500,//ModalWindow width
+				"height": 500,//ModalWindow height
+				"feadSpeed" : 500,//ModalWindow feed speed
+			});
+		});
+	</script>
+</head>
+<body>
+	<!-- Singler -->
+	<button class="trigger" data-modal="singular">ClickMe</button>
+	<div class="modalContent singular">
+		<p class="closeBtn">Close</p>
+		<p>Hello World!!</p>
+	</div><!-- /.mordalContent .item  -->
+</body>
+</html>

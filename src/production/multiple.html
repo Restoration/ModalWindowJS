@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="js/modal-window.js"></script>
+	<script>
+		$(function(){
+			//Default options
+			$(document).modalWindow({
+				"openTrigger": ".trigger",//Classes related to the open trigger
+				"closeTrigger": ".closeBtn",//Classes related to the close button
+				"modalContent": ".modalContent",//Classes related to the contents of the modal window
+				"overLay" : "overLay",//overlayer class
+				"width" : 500,//ModalWindow width
+				"height": 500,//ModalWindow height
+				"feadSpeed" : 500,//ModalWindow feed speed
+			});
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li><button class="trigger" data-modal="item1">button1</button></li>
+		<div class="modalContent item1">
+			<p class="closeBtn">Close</p>
+			<p>Content1</p>
+		</div><!-- /.mordalContent .item1  -->
+
+		<li><button class="trigger" data-modal="item2">button2</button></li>
+		<div class="modalContent item2">
+			<p class="closeBtn">Close</p>
+			<p>Content2</p>
+		</div><!-- /.mordalContent .item2  -->
+
+		<li><button class="trigger" data-modal="item3">button3</button></li>
+		<div class="modalContent item3">
+			<p class="closeBtn">Close</p>
+			<p>Content3</p>
+		</div><!-- /.mordalContent .item3  -->
+	</ul>
+</body>
+</html>
