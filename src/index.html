@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>MordalWindowJS</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<!--GoogleFonts-->
+	<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<!--SimpleModalWindow.js-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/modal-window.js"></script>
+	<script>
+	$(function(){
+		$(document).modalWindow();
+	});
+	</script>
+	<!--SyntaxHighlighter-->
+	<script type="text/javascript" src="js/shCore.js"></script>
+	<script type="text/javascript" src="js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="js/shBrushCss.js"></script>
+	<script type="text/javascript" src="js/shBrushXml.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/shCore.css">
+	<link type="text/css" rel="stylesheet" href="css/shThemeRDark.css">
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+<body>
+	<div id="container">
+		<header id="header" class="boxSizing">
+			<h1>Simple ModalWindow</h1>
+		</header><!-- /#header -->
+		<div id="wrapper" class="boxSizing">
+			<section id="aboutArea">
+				<h2>jQuery ModalWindow</h2>
+
+				<div class="text">
+					It is a modal window simple plugin. <br />
+					If you want to see more than one<br />
+					Since there are a large number of plug-ins that use the value of the name and href,
+					in order to avoid duplication with other plug-ins <br />
+					Get the value from the data attribute, to display the class take that name.
+				</div><!-- /.text -->
+
+				<h2>Example</h2>
+				<div id="sampleCode">
+					<div class="codeBox">
+						<h3>Singular</h3>
+						<button class="trigger" data-modal="singular">ClickMe</button>
+						<div class="modalContent singular">
+							<p class="closeBtn">Close</p>
+							<p>Hello World!!</p>
+						</div><!-- /.mordalContent .singular  -->
+					</div><!-- /.codeBox -->
+					<div class="codeBox">
+						<h3>Multiple</h3>
+						<ul>
+							<li><button class="trigger" data-modal="item1">button1</button></li>
+							<div class="modalContent item1">
+								<p class="closeBtn">Close</p>
+								<p>Content1</p>
+							</div><!-- /.mordalContent .item1  -->
+
+							<li><button class="trigger" data-modal="item2">button2</button></li>
+							<div class="modalContent item2">
+								<p class="closeBtn">Close</p>
+								<p>Content2</p>
+							</div><!-- /.mordalContent .item2  -->
+
+							<li><button class="trigger" data-modal="item3">button3</button></li>
+							<div class="modalContent item3">
+								<p class="closeBtn">Close</p>
+								<p>Content3</p>
+							</div><!-- /.mordalContent .item3  -->
+						</ul>
+					</div><!-- /.codeBox -->
+				</div><!-- /#sampleCode -->
+		</section><!-- /#aboutArea -->
+
+		<section id="codeArea">
+			<h2>Code</h2>
+			<h3>HTML</h3>
+			<pre class="brush: html;">
+				<!-- ReadJsFiles -->
+				<script type="text/javascript" src="js/jquery.js"></script>
+				<script type="text/javascript" src="js/modal-window.js"></script>
+
+				<!-- Singler -->
+				<button class="trigger" data-modal="item">ClickMe</button>
+				<div class="modalContent item">
+					<p class="closeBtn">Close</p>
+					<p>Hello World!!</p>
+				</div><!-- /.mordalContent .item  -->
+
+
+				<!-- Multiple -->
+				<ul>
+					<li><a class="trigger" data-modal="item1">button1</a></li>
+						<div class="modalContent item1">
+							<p class="closeBtn">Close</p>
+							<p>Content1</p>
+						</div><!-- /.mordalContent .item1  -->
+					<li><a class="trigger" data-modal="item2">button2</a></li>
+						<div class="modalContent item2">
+							<p class="closeBtn">Close</p>
+							<p>Content2</p>
+						</div><!-- /.mordalContent .item2  -->
+					<li><a class="trigger" data-modal="item3">button1</a></li>
+						<div class="modalContent item3">
+							<p class="closeBtn">Close</p>
+							<p>Content3</p>
+						</div><!-- /.mordalContent .item3  -->
+				</ul>
+			</pre>
+
+			<h3>CSS</h3>
+			<pre class="brush: css">
+				#overLay{
+					position: fixed;
+					top: 0;
+					left: 0;
+					z-index: 900;
+					width: 100%;
+					height: 100%;
+					background: rgba(0,0,0,0.5);
+				}
+				.modalContent{
+					display: none;
+					overflow:auto;
+					position: absolute;
+					z-index: 1000;
+					padding: 20px;
+					background:#ffffff;
+					color: #000000;
+				}
+				.closeBtn{
+					position: absolute;
+					top: 10px;
+					right: 10px;
+				}
+			</pre>
+
+			<h3>JavaScript</h3>
+			<pre class="brush: javascript;">
+				$(function(){
+					//Default options
+					$(document).modalWindow({
+						"openTrigger": ".trigger",//Classes related to the open trigger
+						"closeTrigger": ".closeBtn",//Classes related to the close button
+						"modalContent": ".modalContent",//Classes related to the contents of the modal window
+						"overLay" : "overLay",//overlayer class
+						"width" : 500,//ModalWindow width
+						"height": 500,//ModalWindow height
+						"feadSpeed" : 500,//ModalWindow feed speed
+					});
+				});
+			</pre>
+			</section><!-- /#codeArea -->
+
+			<section id="licenseArea">
+				<div id="licenseAreaInner" class="boxSizing">
+				<h2>The MIT License (MIT)</h2>
+				<div class="text">
+
+					<p>Copyright (c) 2014 copyright Ryota Yamamoto</p>
+
+					<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+					of this software and associated documentation files (the "Software"), to deal
+					in the Software without restriction, including without limitation the rights
+					to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+					copies of the Software, and to permit persons to whom the Software is
+					furnished to do so, subject to the following conditions:</p>
+
+					<p>The above copyright notice and this permission notice shall be included in
+					all copies or substantial portions of the Software.</p>
+
+					<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+					IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+					FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+					AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+					LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+					OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+					THE SOFTWARE.</p>
+				</div><!-- /.text -->
+				</div><!--/#licenseAreaInner-->
+			</section><!-- /#licenseArea -->
+
+		</div><!-- /#wrapper -->
+		<footer id="footer" class="boxSizing">
+			<p id="copyright">Copyright © 2014 <a href="http://developer-ryota.com/" target="_blank">Ryota Yamamoto</a> All Rights Reserved.</p>
+		</footer><!-- /#footer -->
+	</div><!-- /#container -->
+</body>
+</html>
